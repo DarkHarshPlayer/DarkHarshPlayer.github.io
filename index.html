@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player-Dark Edition</title>
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+    </style><script>
+    let isup = false;
+
+</script></head>
+<body>
+<!--<div id="loader"><center><b>Loading Interface</b><br><br>This can take 5-10 second depending on your internet speed.<br><br>Celebrating International Music Day 2018 June 21<br><br>If your internet connection is slow please give the song time to load.<br><br>If you cannot find your favorite song and if you want it to be added. you can leave the name of your song in the comment section. I'll try my best to add it.<br>More songs and new features will be added soon.<br><br>Don't forget to like<br> <b>1 like = 1 motivation</b><br><br>&copy;Harsh</center> </div>-->
+<center>
+    <div class="volume">
+        <img class="volume_ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANISURBVGhD7Zk7axRhFIbjBTQiauEdERRrEbXQTsVCELQSLNUmf0BEUYgKNmohBCySIsWasLkRSJHStbDQRlFQ0KCWsVDRNEkgcX2OvPvxzex8OxPcnV1kHniZmXPec2ZOMrdMugoKCgoKfEZGRs5o1TE6OtqDLpLbp1BnY0NwwPPadBB/S7xqYv0Ty3ssDyjdWdSGsINVyOEP4mmZeLmjBvKHMCnsCAzyV+QW0e1KpbJW9vYQH8KklAPPY/TN9yTo+cTExHaV5EvSECalI1Sr1VVjY2MHqXmE5uI1JuKfUb43hNAQJlmClEqlTdTfR0sJ9V/QTllbS6MhTLKlUi6Xj9HL7mLxHk/RGtlaQ9oQJlkzwXWxi57v4j2I3ZGl+WQZwiR7ZoaGhrZS98Hvwb6WuKaOytI8sg5hUoljenp6nVaDcJodZh+LsV7PlG4OKxnCpDIH9S+J99tppFAieK75fUx2HSndGDOi0yFxEFdomHkIk1o76FF7IP7idDmvcB34utGs34vtJ0o3xttJ06TWDn8frC+hc0rVQe6q34vtOdStdBhMuQ4i/UR7lY4wPDy8G/9v38+ZcVLpMG0axH7SA0rXQe5NzH9LqTBtHGRhampqgywRyPXFvOnXSbsGMRE/JUsEctdj3vTbcDsHQZdkiUD8su+j/pVSYYpBGkitHaF9hO5G5G7EvB19as0TT3w+EI9c7KikVJg2DtKvdB0J/o69/f7gvWuP0hGSHoi81pxQOkzeg7BuHxvOKlUHubpXlMHBwfVKh+GCy+2lkeUsPYOvG+S78X31e6H06yMr7OBfX+PLxO1OtFGhRMjHH4TZX+OzspJhVLIiOOC6P6zYrijdXLIOI3tm6LsNffR7sG1fWI7I0nyyDCNrJuwuRc37eA/0QJbWkTaMbKnQ5zh++44VqSf+Isvf+U2h0TCyBMGzmfqHLJf9OhPxGfstyZoPoWGUjtDb27ua3CFq+lDok+lrhtihknxJGkYpBx77iP3d98RFvjI5OblFJe0hPozCDvLBtwdyC+gm6639RJoVfxiFHEmDELOvKZ31j54atWG06fAHYX2G5d3x8fH9SncmNoxWHRx4D2+wF1gmfgIqKCgo+N/p6voDyvzrJYr5JqoAAAAASUVORK5CYII=" height="20" width="18">
+        <input type="range" oninput="volumeChange()" min="1" max="100" value="77" class="slider" id="volSlider">
+    </div>
+    <img class="previous" onclick="prevSong()" src="asset/previous.png">
+    <div class="albumart">
+        <img class="albumpic" id="albumPic"src="Divide%20Album%20Cover.jpg">
+    </div>
+    <img class="next" onclick="nextSong()" src="asset/previous.png">
+    <audio class="music" src="05 - Perfect.mp3" id="music" controls ></audio>
+    <div class="trackInfo">
+        <div class="title" id="mainTitle">Perfect</div>
+        <div class="artist" id="mainArtist">Ed Sheeran</div>
+    </div>
+
+    <div class="seekPanel">
+        <span class="currentTime" id="currentTime">00:00</span>
+        <input type="range"  min="1" max="100" value="52" step="0.00001" class="seeker" id="seeker">
+        <span class="duration" id="duration">00:00</span>
+    </div>
+
+    <div class="control_panel">
+        <img class="prevS" onclick="prevSong()" src="asset/prevsong.png" height="42" width="42">
+
+        <img class="play_pause" onclick="play_pause()" src="asset/pause.png" height='33' width='35' id="play_pause">
+        <img class="play_pause1" onclick="play_pause()" src="asset/play.png" height='33' width='35' id="play_pause1">
+
+        <img class="nextS" onclick="nextSong()" src="asset/prevsong.png" height="42" width="42">
+    </div>
+
+
+
+
+
+
+    <div class="songList" id="songList">
+        <img class="uplifter1" id="l6"onclick="
+           if(isup){
+              songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
+              isup = false;
+           }else{
+        songList.classList.add('songListLifter');l6.classList.add('upliftarrow');l3.classList.add('upliftarrow');
+        isup = true;
+        }
+
+" src="asset/previous.png">
+        <div class="songHead" id="l2" onclick="
+       if(isup){
+              songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
+              isup = false;
+           }else{
+        songList.classList.add('songListLifter');l6.classList.add('upliftarrow');l3.classList.add('upliftarrow');
+        isup = true;
+        }
+">Songs</div>
+        <img class="uplifter2" id='l3'onclick="
+         if(isup){
+              songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
+              isup = false;
+           }else{
+        songList.classList.add('songListLifter');l6.classList.add('upliftarrow');l3.classList.add('upliftarrow');
+        isup = true;
+        }
+" src="asset/previous.png">
+    </div>
+</center>
+
+</body>
+<script>
+    let music = document.getElementById('music');
+    let playButton =  document.getElementById('play_pause');
+    let musicispause = true;
+    let volumeSlider = document.getElementById('volSlider');
+    let mainArtist = document.getElementById('mainArtist');
+    let mainTitle = document.getElementById('mainTitle');
+    let albumArt = document.getElementById('albumPic');
+    let currentTime = document.getElementById('currentTime');
+    let duration = document.getElementById('duration');
+    let seeker = document.getElementById('seeker');
+    let currentSong = 0;
+    // let l1 = document.getElementById('l1');
+    // let l2 = document.getElementById('l3') ;
+    // console.log(l2,l1);
+    function append() {
+        for (let i = 0 ;i<songsDB.length;i++){
+            new Track(songsDB[i].name,songsDB[i].src,songsDB[i].artist,songsDB[i].album,i);
+        }
+    }
+
+    let songlist = document.getElementById('songList');
+
+    function Track(name,src,artist,album,id) {
+        this.name = name;
+        this.src = src;
+        this.artist = artist;
+        this.album  = album;
+        this.id = id;
+        let vari = "playDemand('"+ this.id +"')";
+        let trac = "<div class=\"track\" onclick="+vari+"><img class='trackAlbumArt' src='"+this.album+"'><div class='trackData'><span class='trackSongName'>"+this.name+"</span><span class='trackNameSeparator'>|</span><span class='trackArtist'>"+this.artist+"</span></div></div> ";
+        songlist.innerHTML += trac;
+    }
+
+    function playDemand(id) {
+        music.src = songsDB[id].src;
+        music.play();
+        playButton.style.display = "none";
+        musicispause = false;
+        let artist = songsDB[id].artist;
+        let title  = songsDB[id].name;
+        let picArt = songsDB[id].album;
+        albumArt.src = picArt;
+        mainTitle.innerHTML = title;
+        mainArtist.innerHTML = artist;
+        currentSong = id;
+    }
+    function play_pause(){
+        if(musicispause){
+            music.play();
+            playButton.style.display = "none";
+            musicispause = false;
+        }
+        else{
+            music.pause();
+            playButton.style.display = "block";
+            musicispause = true;
+        }
+
+    }
+    music.ontimeupdate = function () {
+        timeCoordinater();
+        seekbar();
+        if(music.currentTime === music.duration){currentSong++;playDemand(currentSong)}
+    };
+
+    function seekbar() {
+        // console.log(seeker);
+        seeker.value = (music.currentTime/music.duration)*100;
+        console.log(   (music.currentTime/music.duration)*100);
+        console.log(seeker.value);;
+    }
+    function nextSong() {
+        if (currentSong >= songsDB.length-1){
+            currentSong = 0;
+        } else{
+            currentSong++;
+        }
+        playDemand(currentSong);
+
+    } function prevSong() {
+        if (currentSong <= 0){
+            currentSong = songsDB.length-1;
+        } else{
+            currentSong--;
+        }
+        playDemand(currentSong);
+    }
+    function volumeChange(){
+        music.volume = (volumeSlider.value)/100;
+    }
+
+    function timeCoordinater() {
+        if(isNaN(music.duration)){
+            duration.innerText = '00:00';
+            currentTime.innerText = toHHMMSS(music.currentTime);
+        }else{
+            currentTime.innerText = toHHMMSS(music.currentTime);
+        duration.innerText = toHHMMSS(music.duration);}
+    }
+    var toHHMMSS = (secs) => {
+        var sec_num = parseInt(secs, 10)
+        var hours   = Math.floor(sec_num / 3600) % 24
+        var minutes = Math.floor(sec_num / 60) % 60
+        var seconds = sec_num % 60
+        return [hours,minutes,seconds]
+            .map(v => v < 10 ? "0" + v : v)
+            .filter((v,i) => v !== "00" || i > 0)
+            .join(":")
+    }
+    window.onload = function(){
+        music.volume = volumeSlider.value/100;
+        //document.getElementById("loader").style.display = "none";
+        append();
+
+    };
+    window.addEventListener('keydown',function (e) {
+        if (e.keyCode == 32){play_pause();}
+        else if (e.keyCode == 37){prevSong();}
+        else if (e.keyCode == 39){nextSong();}
+    });
+    let songsDB = [{
+        'name':'Perfect',
+        'src':'05 - Perfect.mp3',
+        'artist':"Ed Sheeran",
+        'album':'Divide Album Cover.jpg'
+    },{
+        'name':'One call away',
+        'src':'https://dl.dropbox.com/s/g2wdelflcuaumjs/1-01%20One%20Call%20Away.mp3',
+        'artist':'Charlie Puth',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Charlie_Puth_-_Nine_Track_Mind.png/220px-Charlie_Puth_-_Nine_Track_Mind.png'
+    },{
+        'name':'We don&lsquo;t talk anymore',
+        'src':'https://dl.dropbox.com/s/3qojbr3t2h0h6eb/1-05%20We%20Don%27t%20Talk%20Anymore%20%28feat.%20Se.mp3',
+        'artist':'Charlie Puth ft.Selena',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Charlie_Puth_Feat._Selena_Gomez_-_We_Don%27t_Talk_Anymore_%28Official_Single_Cover%29.png/220px-Charlie_Puth_Feat._Selena_Gomez_-_We_Don%27t_Talk_Anymore_%28Official_Single_Cover%29.png'
+    },{
+        'name':'See you again(solo)',
+        'src':'https://dl.dropbox.com/s/guwmk2hmyx0rdes/1-13%20See%20You%20Again%20%28Solo%20Version%29.mp3',
+        'artist':'Charlie Puth',
+        'album':'https://i.ytimg.com/vi/3pMdQAO7iuk/maxresdefault.jpg'
+    },{
+        'name':'Boyfriend',
+        'src':'https://dl.dropbox.com/s/9i5arlyjw8m732m/02.%20Boyfriend.mp3',
+        'artist':'Justin Bieber',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Justin_Bieber_-_Boyfriend.jpg/220px-Justin_Bieber_-_Boyfriend.jpg'
+    },{
+        'name':'Drag me down',
+        'src':'https://dl.dropbox.com/s/bq25xe7ds05demp/02.%20Drag%20Me%20Down.mp3',
+        'artist':'One Direction',
+        'album':'https://is2-ssl.mzstatic.com/image/thumb/Music18/v4/df/7d/d3/df7dd316-a3e2-01d1-6698-dfbd5e451dbb/mzm.oxshyntj.jpg/1200x630bb.jpg'
+    },{
+        'name':'Despacito',
+        'src':'http://mp3.flowhot.net/mp3/wp-content/uploads/2017/03/Luis%20Fonsi%20-%20Despacito%20%28Versi%C3%B3n%20Pop%29.mp3',
+        'artist':'Luis Fonsi ft.Daddy yankee',
+        'album':'https://upload.wikimedia.org/wikipedia/en/c/c8/Luis_Fonsi_Feat._Daddy_Yankee_-_Despacito_%28Official_Single_Cover%29.png'
+    },{
+        'name':'What do you mean',
+        'src':'https://dl.dropbox.com/s/hl0pxno1o6h8xxp/03%20-%20What%20Do%20You%20Mean.mp3',
+        'artist':'Justin Bieber',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/JustinBieberWhatDoYouMeanCover.png/220px-JustinBieberWhatDoYouMeanCover.png'
+    },{
+        'name':'As long as you love me',
+        'src':'https://dl.dropbox.com/s/76uilsys64drqi4/03.%20As%20Long%20As%20You%20Love%20Me.mp3',
+        'artist':'Justin Bieber ft. Big Sean',
+        'album':'https://images.genius.com/b1f93059d46a37a8931055ecfed27834.1000x1000x1.jpg'
+    },{
+        'name':'Perfect',
+        'src':'https://dl.dropbox.com/s/1xucnvujlpflx5n/03.%20Perfect.mp3',
+        'artist':'One Direction',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/One_Direction_-_Perfect.png/220px-One_Direction_-_Perfect.png'
+    },{
+        'name':'History',
+        'src':'https://dl.dropbox.com/s/cb7ln3z97ezpos2/13.%20History.mp3',
+        'artist':'One Direction',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/One_Direction_-_Made_in_the_AM_%28Official_Album_Cover%29.png/220px-One_Direction_-_Made_in_the_AM_%28Official_Album_Cover%29.png'
+    },{
+        'name':'Baby',
+        'src':'https://dl.dropbox.com/s/6hbvgqbyud11i4a/209-justin_bieber-baby_feat._ludacris.mp3',
+        'artist':'Justin Bieber ft. Ludacris',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Babycoverart.jpg/220px-Babycoverart.jpg'
+    },
+
+
+
+        {
+            'name':'Faded',
+            'src':'https://dl.dropbox.com/s/50w5jamtil3hg3a/Faded%20%28Alan%20Walker%29%20.mp3?',
+            'artist':'Alan Walker',
+            'album':'https://2.bp.blogspot.com/-zEGSruGyqNA/WGS2SLBupwI/AAAAAAAAApU/aqo89sdE2d4U9rerY3SMIbAu97fQEAgVQCLcB/s1600/alam-walker-faded-song-lyrics-750750.jpg'
+        },{
+            'name':'Shape of you',
+            'src':'https://dl.dropbox.com/s/15z6oujjpnk4j6e/04%20-%20Shape%20Of%20You.mp3',
+            'artist':'Ed Sheeran',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Shape_Of_You_%28Official_Single_Cover%29_by_Ed_Sheeran.png/220px-Shape_Of_You_%28Official_Single_Cover%29_by_Ed_Sheeran.png'
+        },{
+            'name':'Sorry',
+            'src':'https://dl.dropbox.com/s/p0kgd3f9l9e8ris/04%20-%20Sorry.mp3',
+            'artist':'Justin Bieber',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Justin_Bieber_-_Sorry_%28Official_Single_Cover%29.png/220px-Justin_Bieber_-_Sorry_%28Official_Single_Cover%29.png'
+        },{
+            'name':'Love yourself',
+            'src':'https://dl.dropbox.com/s/qmwv3nuy3nhk9m0/05%20-%20Love%20Yourself.mp3',
+            'artist':'Justin Bieber',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/JustinBieberLoveYourself.png/220px-JustinBieberLoveYourself.png'
+        },{
+            'name':'Company',
+            'src':'https://dl.dropbox.com/s/kou4wk7susfare5/06%20-%20Company.mp3',
+            'artist':'Justin Bieber',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Company_remix_cover.png/220px-Company_remix_cover.png'
+        },{
+            'name':'Computer Boy',
+            'src':'https://dl.dropbox.com/s/86mick0vrtg0ehl/6%20-%20Poppy%20-%20Computer%20Boy.mp3',
+            'artist':'Poppy',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Poppy_-_Poppy_Computer.png/220px-Poppy_-_Poppy_Computer.png'
+        },{
+            'name':'Interweb',
+            'src':'https://dl.dropbox.com/s/xnqkefe5zgbu8tu/9%20-%20Poppy%20-%20Interweb.mp3',
+            'artist':'Poppy',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Poppy_-_Poppy_Computer.png/220px-Poppy_-_Poppy_Computer.png'
+        },{
+            'name':'Software upgrade',
+            'src':'https://dl.dropbox.com/s/5ng4pv4mf173bit/10%20-%20Poppy%20-%20Software%20Upgrade.mp3',
+            'artist':'Poppy',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Poppy_-_Poppy_Computer.png/220px-Poppy_-_Poppy_Computer.png'
+        },{
+            'name':'Beauty and the beat',
+            'src':'https://dl.dropbox.com/s/j8xg0t1utl919wb/10.%20Beauty%20And%20A%20Beat.mp3',
+            'artist':'Justin Bieber ft. Nicki Minaj',
+            'album':'https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Justin_Bieber_-_Beauty_and_a_Beat.png/220px-Justin_Bieber_-_Beauty_and_a_Beat.png'
+        }];
+
+
+</script>
+</html>
