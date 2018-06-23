@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Music Player-Dark Edition</title>
+    <title id="PageTitle">Music Player-Dark Edition</title>
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
 
@@ -35,6 +35,18 @@
     <div class="volume">
         <img class="volume_ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANISURBVGhD7Zk7axRhFIbjBTQiauEdERRrEbXQTsVCELQSLNUmf0BEUYgKNmohBCySIsWasLkRSJHStbDQRlFQ0KCWsVDRNEkgcX2OvPvxzex8OxPcnV1kHniZmXPec2ZOMrdMugoKCgoKfEZGRs5o1TE6OtqDLpLbp1BnY0NwwPPadBB/S7xqYv0Ty3ssDyjdWdSGsINVyOEP4mmZeLmjBvKHMCnsCAzyV+QW0e1KpbJW9vYQH8KklAPPY/TN9yTo+cTExHaV5EvSECalI1Sr1VVjY2MHqXmE5uI1JuKfUb43hNAQJlmClEqlTdTfR0sJ9V/QTllbS6MhTLKlUi6Xj9HL7mLxHk/RGtlaQ9oQJlkzwXWxi57v4j2I3ZGl+WQZwiR7ZoaGhrZS98Hvwb6WuKaOytI8sg5hUoljenp6nVaDcJodZh+LsV7PlG4OKxnCpDIH9S+J99tppFAieK75fUx2HSndGDOi0yFxEFdomHkIk1o76FF7IP7idDmvcB34utGs34vtJ0o3xttJ06TWDn8frC+hc0rVQe6q34vtOdStdBhMuQ4i/UR7lY4wPDy8G/9v38+ZcVLpMG0axH7SA0rXQe5NzH9LqTBtHGRhampqgywRyPXFvOnXSbsGMRE/JUsEctdj3vTbcDsHQZdkiUD8su+j/pVSYYpBGkitHaF9hO5G5G7EvB19as0TT3w+EI9c7KikVJg2DtKvdB0J/o69/f7gvWuP0hGSHoi81pxQOkzeg7BuHxvOKlUHubpXlMHBwfVKh+GCy+2lkeUsPYOvG+S78X31e6H06yMr7OBfX+PLxO1OtFGhRMjHH4TZX+OzspJhVLIiOOC6P6zYrijdXLIOI3tm6LsNffR7sG1fWI7I0nyyDCNrJuwuRc37eA/0QJbWkTaMbKnQ5zh++44VqSf+Isvf+U2h0TCyBMGzmfqHLJf9OhPxGfstyZoPoWGUjtDb27ua3CFq+lDok+lrhtihknxJGkYpBx77iP3d98RFvjI5OblFJe0hPozCDvLBtwdyC+gm6639RJoVfxiFHEmDELOvKZ31j54atWG06fAHYX2G5d3x8fH9SncmNoxWHRx4D2+wF1gmfgIqKCgo+N/p6voDyvzrJYr5JqoAAAAASUVORK5CYII=" height="20" width="18">
         <input type="range" oninput="volumeChange()" min="1" max="100" value="77" class="slider" id="volSlider">
+    </div>
+    <div class="infoButton" onclick="infoPanel.classList.add('infoPanelUp')">
+    <img src="asset/info.png" height="20" width="20">
+    </div>
+    <div class="infoPanel" id="infoPanel">
+    <span class="infoPanelCloser" onclick="infoPanel.classList.remove('infoPanelUp');">&times;</span>
+        <h1>Dark Music Player</h1>
+        <h6>A fun project made by Harsh</h6>
+        <p>If you are facing any kind of problems while playing the song it might be because your internet connection is slow and the song is buffering.
+        Please wait till the song buffers.</p>
+        <p>All the songs and media used here belongs to their respected artist and owner.</p>
+        <center class="copyRight">&copy;Harsh</center>
     </div>
     <img class="previous" onclick="prevSong()" src="asset/previous.png">
     <div class="albumart">
@@ -68,7 +80,7 @@
 
 
     <div class="songList" id="songList">
-        <img class="uplifter1" id="l6"onclick="
+        <div class="uplifter1" id="l6"onclick="
            if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -77,7 +89,7 @@
         isup = true;
         }
 
-" src="asset/previous.png">
+" ></div>
         <div class="songHead" id="l2" onclick="
        if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
@@ -95,7 +107,10 @@
         songList.classList.add('songListLifter');l6.classList.add('upliftarrow');l3.classList.add('upliftarrow');
         isup = true;
         }
-" src="asset/previous.png">
+" src="asset/previous.png"><br>
+        <div class="songListAppender" id="songListAppender">
+         
+        </div>
     </div>
 </center>
 
@@ -112,6 +127,7 @@
     let duration = document.getElementById('duration');
     let seeker = document.getElementById('seeker');
     let currentSong = 0;
+    // let pageTitle = document.getElementById('pageTitle');
     // let l1 = document.getElementById('l1');
     // let l2 = document.getElementById('l3') ;
     // console.log(l2,l1);
@@ -121,7 +137,7 @@
         }
     }
 
-    let songlist = document.getElementById('songList');
+    let songlistappender = document.getElementById('songListAppender');
 
     function Track(name,src,artist,album,id) {
         this.name = name;
@@ -131,7 +147,7 @@
         this.id = id;
         let vari = "playDemand('"+ this.id +"')";
         let trac = "<div class=\"track\" onclick="+vari+"><img class='trackAlbumArt' src='"+this.album+"'><div class='trackData'><span class='trackSongName'>"+this.name+"</span><span class='trackNameSeparator'>|</span><span class='trackArtist'>"+this.artist+"</span></div></div> ";
-        songlist.innerHTML += trac;
+        songlistappender.innerHTML += trac;
     }
 
     function playDemand(id) {
@@ -146,6 +162,7 @@
         mainTitle.innerHTML = title;
         mainArtist.innerHTML = artist;
         currentSong = id;
+       document.title = songsDB[id].name +"-"+songsDB[id].artist+ ": On Dark Music Player";
     }
     function play_pause(){
         if(musicispause){
