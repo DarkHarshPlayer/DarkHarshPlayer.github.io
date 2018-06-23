@@ -10,7 +10,23 @@ body {
     body{
         zoom: 150%;
     }
+    .prevS{
+        position: absolute;
+        top: 0%;
+        left: 35% !important;
+        cursor: pointer;
+
+    }
+    .nextS{
+        position: absolute;
+        top: 0%;
+        right: 34% !important;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+
 }
+
 #loader{
 
     position: fixed;
@@ -129,17 +145,19 @@ body {
     overflow: hidden;
 }
 
+
+
 .prevS{
     position: absolute;
     top: 0%;
-    left: 35%;
+    left: 30%;
     cursor: pointer;
 
 }
 .nextS{
     position: absolute;
     top: 0%;
-    right: 34%;
+    right: 30%;
     transform: rotate(180deg);
     cursor: pointer;
 }
