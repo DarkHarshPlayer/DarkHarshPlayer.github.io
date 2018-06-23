@@ -4,7 +4,7 @@ body {
     font-family: 'Chewy';
     overflow-x: hidden;
     margin:0;
-    /*zoom: 150%;*/
+    /*zoom: 115%;*/
 }
 @media only screen and (min-width: 600px){
     body{
@@ -24,6 +24,16 @@ body {
         transform: rotate(180deg);
         cursor: pointer;
     }
+    .trackAlbumArt{
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        height: 60px !important;
+        width: 60px !important;
+        border-radius: 50%;
+    }
+
 
 }
 
@@ -232,8 +242,8 @@ body {
     left: 10%;
     top: 50%;
     transform: translate(-50%,-50%);
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
 
