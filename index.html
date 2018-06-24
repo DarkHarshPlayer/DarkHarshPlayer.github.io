@@ -43,9 +43,13 @@
     <span class="infoPanelCloser" onclick="infoPanel.classList.remove('infoPanelUp');">&times;</span>
         <h1>Dark Music Player</h1>
         <h6>A fun project made by Harsh</h6>
+        <p>Your Browser Should be in the latest version otherwise you might experience problem in playing songs and in other function.</p>
         <p>If you are facing any kind of problems while playing the song it might be because your internet connection is slow and the song is buffering.
         Please wait till the song buffers.</p>
         <p>All the songs and media used here belongs to their respected artist and owner.</p>
+        <p>This site still under development. New songs and features will be added soon.</p>
+        <p>If you cant find your favorite song.You can send a request by e-mail. I'll try my best to upload your requested song.</p>
+        <code><a href="mailto:harshbanjare007@outlook.com">Harshbanjare007@outlook.com</a></code>
         <center class="copyRight">&copy;Harsh</center>
     </div>
     <img class="previous" onclick="prevSong()" src="asset/previous.png">
@@ -81,6 +85,9 @@
 
     <div class="songList" id="songList">
         <div class="uplifter1" id="l6"onclick="
+
+
+
            if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -91,6 +98,9 @@
 
 " ></div>
         <div class="songHead" id="l2" onclick="
+
+
+
        if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -100,6 +110,8 @@
         }
 ">Songs</div>
         <img class="uplifter2" id='l3'onclick="
+
+
          if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -108,8 +120,14 @@
         isup = true;
         }
 " src="asset/previous.png"><br>
+        <div class="songSearch">
+            <div class="songSearchBar">
+                <input type="text" id="songSearchkey" onkeyup="searchSong()" class="songsearchkey" placeholder="Search...">
+                <img onclick="searchSong()" src="asset/search.png" class="songSearchIcon">
+            </div>
+        </div><br>
         <div class="songListAppender" id="songListAppender">
-         
+
         </div>
     </div>
 </center>
@@ -182,12 +200,33 @@
         seekbar();
         if(music.currentTime === music.duration){currentSong++;playDemand(currentSong)}
     };
+    function searchSong(){
+        songlistappender.scrollTop = songlistappender;
+        let input , track , trackdata , a , b ;
+        input = document.getElementById('songSearchkey').value.toUpperCase();
+        track = document.getElementsByClassName('track');
+        // console.log(track.length);
+        for (var i = 0; i < track.length; i++){
+            // console.log('hi');
+            trackdata = track[i].getElementsByClassName('trackData');
+             //console.log(trackdata[0].children);
+              a = trackdata[0].getElementsByClassName('trackSongName')[0];
+              b = trackdata[0].getElementsByClassName('trackArtist')[0];
+           // console.log(a.innerHTML+" | "+b.innerHTML);
+            if(a.innerHTML.toUpperCase().indexOf(input) > -1 || b.innerHTML.toUpperCase().indexOf(input) > -1){
+                track[i].style.display =  "";
+            }else {
+                track[i].style.display = "none";
+            }
 
+        }
+
+    }
     function seekbar() {
         // console.log(seeker);
         seeker.value = (music.currentTime/music.duration)*100;
-        console.log(   (music.currentTime/music.duration)*100);
-        console.log(seeker.value);;
+        // console.log(   (music.currentTime/music.duration)*100);
+        // console.log(seeker.value);;
     }
     function nextSong() {
         if (currentSong >= songsDB.length-1){
