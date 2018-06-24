@@ -84,7 +84,8 @@
         <div class="uplifter1" id="l6"onclick="
 
 
-
+ songSearchkey.value = '';
+ searchSong();
            if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -97,7 +98,8 @@
         <div class="songHead" id="l2" onclick="
 
 
-
+        songSearchkey.value = '';
+        searchSong();
        if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -108,7 +110,8 @@
 ">Songs</div>
         <img class="uplifter2" id='l3'onclick="
 
-
+ songSearchkey.value = '';
+ searchSong();
          if(isup){
               songList.classList.remove('songListLifter');l6.classList.remove('upliftarrow');l3.classList.remove('upliftarrow');
               isup = false;
@@ -142,6 +145,7 @@
     let duration = document.getElementById('duration');
     let seeker = document.getElementById('seeker');
     let currentSong = 0;
+    let input , track , trackdata , a , b ;
     // let pageTitle = document.getElementById('pageTitle');
     // let l1 = document.getElementById('l1');
     // let l2 = document.getElementById('l3') ;
@@ -207,7 +211,7 @@
     };
     function searchSong(){
         songlistappender.scrollTop = songlistappender;
-        let input , track , trackdata , a , b ;
+
         input = document.getElementById('songSearchkey').value.toUpperCase();
         track = document.getElementsByClassName('track');
         // console.log(track.length);
