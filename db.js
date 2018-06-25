@@ -13,7 +13,7 @@ let songsDB =[{
 },
 
 {
-    'name':'We don&lsquo;t talk anymore',
+    'name':"We don't talk anymore",
     'src':'https://dl.dropbox.com/s/3qojbr3t2h0h6eb/1-05%20We%20Don%27t%20Talk%20Anymore%20%28feat.%20Se.mp3',
     'artist':'Charlie Puth ft.Selena',
     'album':'https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Charlie_Puth_Feat._Selena_Gomez_-_We_Don%27t_Talk_Anymore_%28Official_Single_Cover%29.png/220px-Charlie_Puth_Feat._Selena_Gomez_-_We_Don%27t_Talk_Anymore_%28Official_Single_Cover%29.png'
@@ -205,7 +205,7 @@ let songsDB =[{
     'name':'Castle On The Hills',
     'src':'https://dl.dropbox.com/s/lntg8flhcf9gdpo/02%20-%20Castle%20On%20The%20Hill.mp3',
     'artist':'Ed Sheeran',
-    'album':'http://www.wdjx.com/wp-content/uploads/2017/01/Ed-Sheeran-Castle-On-The-Hill-Official-Lyric-Video.jpeg'
+    'album':'https://dl.dropbox.com/s/qbrg6v70bmjgtv4/Ed-Sheeran-Castle-On-The-Hill-Official-Lyric-Video.jpeg'
 },
 
 {
@@ -342,7 +342,7 @@ let songsDB =[{
 },
 
 {
-    'name':'On &amp; On',
+    'name':'On & On',
     'src':'https://dl.dropbox.com/s/6h2l7djfrur3dg0/Cartoon%20-%20On%20_%20On%20%28feat.%20Daniel%20Levi%29%20_NCS%20Release_.mp3',
     'artist':'Cartoon',
     'album':'https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/fc/a6/63/fca663d5-11eb-a0fd-4090-66adc426fc5a/cover.jpg/600x600bf.jpg'

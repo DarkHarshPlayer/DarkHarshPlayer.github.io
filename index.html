@@ -3,6 +3,9 @@
     <title id="PageTitle">Music Player-Dark Edition</title>
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+
+    <!-- Favicon -->
+
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -17,8 +20,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+
+    <!--- End -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="db.js"></script>
@@ -30,7 +35,7 @@
 
 <center>
     <div class="volume">
-        <img class="volume_ico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANISURBVGhD7Zk7axRhFIbjBTQiauEdERRrEbXQTsVCELQSLNUmf0BEUYgKNmohBCySIsWasLkRSJHStbDQRlFQ0KCWsVDRNEkgcX2OvPvxzex8OxPcnV1kHniZmXPec2ZOMrdMugoKCgoKfEZGRs5o1TE6OtqDLpLbp1BnY0NwwPPadBB/S7xqYv0Ty3ssDyjdWdSGsINVyOEP4mmZeLmjBvKHMCnsCAzyV+QW0e1KpbJW9vYQH8KklAPPY/TN9yTo+cTExHaV5EvSECalI1Sr1VVjY2MHqXmE5uI1JuKfUb43hNAQJlmClEqlTdTfR0sJ9V/QTllbS6MhTLKlUi6Xj9HL7mLxHk/RGtlaQ9oQJlkzwXWxi57v4j2I3ZGl+WQZwiR7ZoaGhrZS98Hvwb6WuKaOytI8sg5hUoljenp6nVaDcJodZh+LsV7PlG4OKxnCpDIH9S+J99tppFAieK75fUx2HSndGDOi0yFxEFdomHkIk1o76FF7IP7idDmvcB34utGs34vtJ0o3xttJ06TWDn8frC+hc0rVQe6q34vtOdStdBhMuQ4i/UR7lY4wPDy8G/9v38+ZcVLpMG0axH7SA0rXQe5NzH9LqTBtHGRhampqgywRyPXFvOnXSbsGMRE/JUsEctdj3vTbcDsHQZdkiUD8su+j/pVSYYpBGkitHaF9hO5G5G7EvB19as0TT3w+EI9c7KikVJg2DtKvdB0J/o69/f7gvWuP0hGSHoi81pxQOkzeg7BuHxvOKlUHubpXlMHBwfVKh+GCy+2lkeUsPYOvG+S78X31e6H06yMr7OBfX+PLxO1OtFGhRMjHH4TZX+OzspJhVLIiOOC6P6zYrijdXLIOI3tm6LsNffR7sG1fWI7I0nyyDCNrJuwuRc37eA/0QJbWkTaMbKnQ5zh++44VqSf+Isvf+U2h0TCyBMGzmfqHLJf9OhPxGfstyZoPoWGUjtDb27ua3CFq+lDok+lrhtihknxJGkYpBx77iP3d98RFvjI5OblFJe0hPozCDvLBtwdyC+gm6639RJoVfxiFHEmDELOvKZ31j54atWG06fAHYX2G5d3x8fH9SncmNoxWHRx4D2+wF1gmfgIqKCgo+N/p6voDyvzrJYr5JqoAAAAASUVORK5CYII=" height="20" width="18">
+        <img class="volume_ico"onclick="songMute()" id="volume_ico" src="asset/vol%203.png" height="20" width="18">
         <input type="range" oninput="volumeChange()" min="1" max="100" value="77" class="slider" id="volSlider">
     </div>
     <div class="infoButton" onclick="infoPanel.classList.add('infoPanelUp')">
@@ -54,7 +59,7 @@
         <img class="albumpic" id="albumPic"src="Divide%20Album%20Cover.jpg">
     </div>
     <img class="next" onclick="nextSong()" src="asset/previous.png">
-    <audio class="music" src="05 - Perfect.mp3" id="music" controls ></audio>
+    <audio class="music" src="05 - Perfect.mp3" onpause="playButton.style.display = 'block'" onplay="playButton.style.display = 'none'" id="music" controls ></audio>
     <div class="trackInfo">
         <div class="title" id="mainTitle">Perfect</div>
         <div class="artist" id="mainArtist">Ed Sheeran</div>
@@ -136,7 +141,6 @@
 <script>
     let music = document.getElementById('music');
     let playButton =  document.getElementById('play_pause');
-    let musicispause = true;
     let volumeSlider = document.getElementById('volSlider');
     let mainArtist = document.getElementById('mainArtist');
     let mainTitle = document.getElementById('mainTitle');
@@ -146,10 +150,8 @@
     let seeker = document.getElementById('seeker');
     let currentSong = 0;
     let input , track , trackdata , a , b ;
-    // let pageTitle = document.getElementById('pageTitle');
-    // let l1 = document.getElementById('l1');
-    // let l2 = document.getElementById('l3') ;
-    // console.log(l2,l1);
+    let volume_ico = document.getElementById('volume_ico');
+
     function append() {
         for (let i = 0 ;i<songsDB.length;i++){
             new Track(songsDB[i].name,songsDB[i].src,songsDB[i].artist,songsDB[i].album,i);
@@ -183,16 +185,18 @@
         currentSong = id;
        document.title = songsDB[id].name +"-"+songsDB[id].artist+ ": On Dark Music Player";
     }
+
     function play_pause(){
-        if(musicispause){
+        console.log(music.paused);
+        if(music.paused){
             music.play();
             playButton.style.display = "none";
-            musicispause = false;
+
         }
         else{
             music.pause();
             playButton.style.display = "block";
-            musicispause = true;
+
         }
 
     }
@@ -253,7 +257,30 @@
         }
         playDemand(currentSong);
     }
+
+    function songMute() {
+
+        if(music.muted) {
+            music.muted = false;
+            volumeSlider.value = 70;
+            volumeChange();
+        }else {
+            music.muted = true;
+            volumeSlider.value = 0;
+            volumeChange();
+        }
+    }
     function volumeChange(){
+        if(volumeSlider.value < 50 && volumeSlider.value >= 3){
+            volume_ico.src = "asset/vol%202.png";
+            music.muted = false;
+        }else if(volumeSlider.value < 3){
+            volume_ico.src = "asset/vol%201.png";
+            music.muted = true;
+        }else {
+            volume_ico.src = "asset/vol%203.png";
+            music.muted = false
+        }
         music.volume = (volumeSlider.value)/100;
     }
 

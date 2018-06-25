@@ -112,6 +112,7 @@ body {
     top: 13px;
     left: 21%;
     transform: translate(-52%,-50%);
+    cursor: pointer;
 }
 .infoButton{
     position: absolute;
