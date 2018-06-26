@@ -122,8 +122,12 @@
 " src="asset/previous.png"><br>
         <div class="songSearch">
             <div class="songSearchBar">
+
                 <input type="text" id="songSearchkey" onkeyup="searchSong()" class="songsearchkey" placeholder="Search...">
                 <img onclick="searchSong()" src="asset/search.png" class="songSearchIcon">
+                <div class="unStacker" onclick="stacker()">
+                    <img class="UnStackerIco" id="menuer" src="asset/menu/menu.png">
+                </div>
             </div>
         </div><br>
         <div class="songListAppender" id="songListAppender">
@@ -145,7 +149,32 @@
     let seeker = document.getElementById('seeker');
     let currentSong = 0;
     let input , track , trackdata , a , b ;
+    let trackI = document.getElementsByClassName('SearchTrack');
+    let songlistappender = document.getElementById('songListAppender');
     let volume_ico = document.getElementById('volume_ico');
+    let menuer = document.getElementById('menuer');
+    let isStack = false;
+    function stacker() {
+        if(isStack){
+           isStack = false;
+            songlistappender.classList.remove('songListAppenderStacked');
+            songlistappender.classList.add('songListAppender');
+            for(let i = 0; i < trackI.length;i++){
+                trackI[i].classList.remove('trackStacked');
+                trackI[i].classList.add('track')
+            }
+            menuer.src = "asset/menu/menu.png";
+        }else {
+            isStack = true;
+            songlistappender.classList.remove('songListAppender');
+            songlistappender.classList.add('songListAppenderStacked');
+            for(let i = 0; i < trackI.length;i++){
+                trackI[i].classList.remove('track');
+                trackI[i].classList.add('trackStacked')
+            }
+            menuer.src = "asset/menu/stack.png";
+        }
+    }
 
     function append() {
         for (let i = 0 ;i<songsDB.length;i++){
@@ -153,7 +182,7 @@
         }
     }
 
-    let songlistappender = document.getElementById('songListAppender');
+
 
     function Track(name,src,artist,album,id) {
         this.name = name;
