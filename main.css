@@ -24,15 +24,8 @@ body {
         transform: rotate(180deg);
         cursor: pointer;
     }
-    .trackAlbumArt{
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        height: 60px !important;
-        width: 60px !important;
-        border-radius: 50%;
-    }
+
+
     .infoPanel{
         position: fixed;
         height: 99% !important;
@@ -45,7 +38,9 @@ body {
         z-index: 200;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        overflow-y: scroll;
     }
+
     /*.infoPanel::after{*/
         /*content: '';*/
         /*width: 1px;*/
@@ -276,9 +271,9 @@ body {
 .songList{
     position: absolute;
     bottom: 0%;
-    left: 50%;
-    transform: translate(-50%,0%);
-    width: 80%;
+    left: 25%;
+    transform: translate(0%,0%);
+    width: 50%;
     height: 35px;
     border-top-left-radius: 26px;
     border-top-right-radius: 26px;
@@ -291,10 +286,13 @@ body {
     padding: 0;
 }
 .songListLifter{
+    left: 10% !important;
     bottom: 0% !important;
     height: 100% !important;
+    width:80% !important;
     overflow-y: visible;
-
+    /*-webkit-animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;*/
+    /*animation: slide-in-elliptic-bottom-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;*/
 }
 
 .songHead{
@@ -302,49 +300,9 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
-.track{
-    position: relative;
-    width: 70%;
-    padding-top:40px;
-    padding-bottom: 40px;
-    padding-left: 25px;
-    padding-right: 25px;
-    background: #aaaaaa;
-    border: 1px solid #7a7a7a;
-    border-radius: 14px;
-    margin-top: 15px;
-    cursor:pointer;
 
-}
-.trackData{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-.trackAlbumArt{
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
 
-.trackSongName{
-    color:#444444;
-    font-size: 18px;
-}
-.trackNameSeparator{
-    font-family: Calibri;
-    font-size: 25px;
-    color:#232323;
-}
-.trackArtist{
-    color: #444444;
-    font-size: 12px;
-}
+
 .downloader{
     float: right;
     height: 30px;
@@ -439,15 +397,6 @@ body {
     width: 35px;
     transition: all .6s ease-in-out;
     top: 10px;
-}
-.songListAppender{
-    position: fixed;
-    height: 78%;
-    width: 100%;
-    background:transparent;
-    overflow-y: scroll;
-    margin: 0;
-    /*background: white;*/
 }
 
 

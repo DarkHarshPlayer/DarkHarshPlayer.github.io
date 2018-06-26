@@ -1,0 +1,141 @@
+@media only screen and (min-width: 900px){
+    .trackStacked{
+        padding: 10px;
+        text-align: center;
+        align-content: center;
+        background: #aaaaaa;
+        border: 1px solid #7a7a7a;
+        border-radius: 14px;
+        /*margin-top: 15px;*/
+        cursor:pointer;
+        height: 100px;
+    }
+    .trackStacked > img{
+        cursor: pointer;
+        height: 70px !important;
+        width: 70px !important;
+        border-radius: 50%;
+    }
+    .songListAppenderStacked{
+        position: fixed;
+        height: 78%;
+        width: 100%;
+        background:transparent;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 30% 30% 30% !important;
+        grid-gap: 3.3333333%;
+        margin: 0;
+        padding-left: 10px;
+        /*background: white;*/
+    }
+
+    /*..................................................*/
+    .track > img{
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        height: 60px !important;
+        width: 60px !important;
+        border-radius: 50%;
+    }
+
+
+
+}
+.trackStacked{
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+    background: #aaaaaa;
+    border: 1px solid #7a7a7a;
+    border-radius: 14px;
+    /*margin-top: 15px;*/
+    cursor:pointer;
+    height: 120px;
+}
+.trackStacked > div{
+    background: transparent;
+}
+.songListAppenderStacked{
+    position: fixed;
+    height: 78%;
+    width: 100%;
+    background:transparent;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap:2%;
+    overflow-x: hidden;
+    margin: 0;
+    /*padding-left: 10px;*/
+    /*background: white;*/
+}
+.trackStacked > img{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+/*...................................................................*/
+
+.songListAppender{
+    position: fixed;
+    height: 78%;
+    width: 100%;
+    background:transparent;
+    overflow-y: scroll;
+    margin: 0;
+    /*background: white;*/
+}
+
+
+
+
+.track{
+    position: relative;
+    width: 70%;
+    padding-top:40px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #aaaaaa;
+    border: 1px solid #7a7a7a;
+    border-radius: 14px;
+    margin-top: 15px;
+    cursor:pointer;
+
+}
+
+.track > div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.track > img{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.trackSongName{
+    color:#444444;
+    font-size: 18px;
+}
+.trackNameSeparator{
+    font-family: Calibri;
+    font-size: 25px;
+    color:#232323;
+}
+.trackArtist{
+    color: #444444;
+    font-size: 12px;
+}

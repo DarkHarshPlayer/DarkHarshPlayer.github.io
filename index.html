@@ -23,7 +23,7 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 
     <!--- End -->
-
+    <link rel="stylesheet" href="track.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="db.js"></script>
@@ -59,7 +59,7 @@
         <img class="albumpic" id="albumPic"src="Divide%20Album%20Cover.jpg">
     </div>
     <img class="next" onclick="nextSong()" src="asset/previous.png">
-    <audio class="music" src="05 - Perfect.mp3" onpause="playButton.style.display = 'block'" onplay="playButton.style.display = 'none'" id="music" controls ></audio>
+    <audio class="music" src="05%20-%20Perfect.mp3" onpause="playButton.style.display = 'block'" onplay="playButton.style.display = 'none'" id="music" controls ></audio>
     <div class="trackInfo">
         <div class="title" id="mainTitle">Perfect</div>
         <div class="artist" id="mainArtist">Ed Sheeran</div>
@@ -79,11 +79,6 @@
 
         <img class="nextS" onclick="nextSong()" src="asset/prevsong.png" height="42" width="42">
     </div>
-
-
-
-
-
 
     <div class="songList" id="songList">
         <div class="uplifter1" id="l6"onclick="
@@ -132,7 +127,7 @@
             </div>
         </div><br>
         <div class="songListAppender" id="songListAppender">
-
+            <!--<div class="track" ><img src='http://placekitten.com/200/200'><div class='trackData'><span class='trackSongName'>"+this.name+"</span><span class='trackNameSeparator'>|</span><span class='trackArtist'>"+this.artist+"</span></div></div>-->
         </div>
     </div>
 </center>
@@ -167,7 +162,7 @@
         this.album  = album;
         this.id = id;
         let vari = "playDemand('"+ this.id +"')";
-        let trac = "<div class=\"track\" onclick="+vari+"><img class='trackAlbumArt' src='"+this.album+"'><div class='trackData'><span class='trackSongName'>"+this.name+"</span><span class='trackNameSeparator'>|</span><span class='trackArtist'>"+this.artist+"</span></div></div> ";
+        let trac = "<div class=\"track SearchTrack\" onclick="+vari+"><img src='"+this.album+"'><br><div class='trackData'><span class='trackSongName'>"+this.name+"</span><span class='trackNameSeparator'>|</span><span class='trackArtist'>"+this.artist+"</span></div></div> ";
         songlistappender.innerHTML += trac;
     }
 
@@ -217,7 +212,7 @@
         songlistappender.scrollTop = songlistappender;
 
         input = document.getElementById('songSearchkey').value.toUpperCase();
-        track = document.getElementsByClassName('track');
+        track = document.getElementsByClassName('searchTrack');
         // console.log(track.length);
         for (var i = 0; i < track.length; i++){
             // console.log('hi');
