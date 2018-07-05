@@ -8,6 +8,30 @@ let songsDB =[
 
 
     {
+        'name':'Perfect',
+        'src':'https://dl.dropbox.com/s/1xucnvujlpflx5n/03.%20Perfect.mp3',
+        'artist':'One Direction',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/One_Direction_-_Perfect.png/220px-One_Direction_-_Perfect.png'
+    },
+
+
+    {
+        'name':'Brother',
+        'src':'https://dl.dropbox.com/s/rbjx6gacimdxby2/01%20-%20Brother.mp3',
+        'artist':'Kodaline',
+        'album':'https://upload.wikimedia.org/wikipedia/en/a/a0/Kodaline_Brother.jpg'
+    },
+
+
+    {
+        'name':'Somebody to die for',
+        'src':'https://dl.dropbox.com/s/g16dnjn5m84d7fc/10%20Hurts%20-%20Somebody%20To%20Die%20For.mp3',
+        'artist':'Hurts',
+        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/HurtsSingleSomebodyToDieForCover.jpg/220px-HurtsSingleSomebodyToDieForCover.jpg'
+    },
+
+
+    {
         'name':'One call away',
         'src':'https://dl.dropbox.com/s/g2wdelflcuaumjs/1-01%20One%20Call%20Away.mp3',
         'artist':'Charlie Puth',
@@ -84,14 +108,6 @@ let songsDB =[
         'src':'https://dl.dropbox.com/s/76uilsys64drqi4/03.%20As%20Long%20As%20You%20Love%20Me.mp3',
         'artist':'Justin Bieber ft. Big Sean',
         'album':'https://images.genius.com/b1f93059d46a37a8931055ecfed27834.1000x1000x1.jpg'
-    },
-
-
-    {
-        'name':'Perfect',
-        'src':'https://dl.dropbox.com/s/1xucnvujlpflx5n/03.%20Perfect.mp3',
-        'artist':'One Direction',
-        'album':'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/One_Direction_-_Perfect.png/220px-One_Direction_-_Perfect.png'
     },
 
 
@@ -448,7 +464,7 @@ let songsDB =[
 
 
     {
-        'name':"Don't let me down",
+        'name':'Don’t let me down',
         'src':'https://dl.dropbox.com/s/kjix5ylr10qn9d5/The%20Chainsmokers%20-%20Don%27t%20Let%20Me%20Down%20%28feat.%20Daya%29.mp3',
         'artist':'Chainsmokers ft. Daya',
         'album':'https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Don%27t_Let_Me_Down_%28featuring_Daya%29_%28Official_Single_Cover%29_by_The_Chainsmokers.png/220px-Don%27t_Let_Me_Down_%28featuring_Daya%29_%28Official_Single_Cover%29_by_The_Chainsmokers.png'
@@ -493,5 +509,6 @@ let songsDB =[
         'artist':'Chainsmokers ft. Hasley',
         'album':'https://runthetrap.com/wp-content/uploads/2016/09/closer-remix.jpg'
     }
+
 
 ];
